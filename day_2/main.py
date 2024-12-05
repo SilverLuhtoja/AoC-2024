@@ -8,9 +8,6 @@ def get_filtered_data():
     return [list(map(int, item)) for item in workableList]
 
 
-data = get_filtered_data()
-
-
 def is_safe(line) -> bool:
     isIncreasing = line[0] < line[1]
 
@@ -39,6 +36,7 @@ def assure_safety(line):
 
 
 def Solution1():
+    data = get_filtered_data()
     result = 0
     for line in data:
         result += is_safe(line)
@@ -47,6 +45,7 @@ def Solution1():
 
 
 def Solution2():
+    data = get_filtered_data()
     result = 0
     for line in data:
         result += assure_safety(line)
