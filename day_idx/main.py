@@ -7,15 +7,14 @@ def get_filtered_data():
     return content
 
 
-data = get_filtered_data()
-
-
 def method(line):
     pass
 
 
 def Solution1():
+    data = get_filtered_data()
     result = 0
+    
     for line in data:
         result += method(line)
 
@@ -23,12 +22,14 @@ def Solution1():
 
 
 # def Solution2():
+#      data = get_filtered_data()
 #     result = 0
+
 #     for line in data:
 #         result += method(line)
 
 #     return result
 
 
-print(Solution1)
-# print(Solution2)
+print(Solution1())
+# print(Solution2())

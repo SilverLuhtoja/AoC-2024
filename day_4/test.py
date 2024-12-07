@@ -16,6 +16,19 @@ MAMMMXMMMM
 MXMXAXMASX"""
 
 
+def mock_ReadFile2(filepath):
+    return """.M.S......
+..A..MSMS.
+.M.S.MAA..
+..A.ASMSM.
+.M.S.M....
+..........
+S.S.S.S.S.
+.A.A.A.A..
+M.M.M.M.M.
+.........."""
+
+
 class TestSolution(unittest.TestCase):
 
     @patch('main.ReadFile', side_effect=mock_ReadFile)
@@ -26,10 +39,10 @@ class TestSolution(unittest.TestCase):
 
         self.assertEqual(result, expected_result)
 
-    # @patch('main.ReadFile', side_effect=mock_ReadFile)
-    # def test_solution2(self, mock_ReadFile):
-    #     result = Solution2()
+    @patch('main.ReadFile', side_effect=mock_ReadFile2)
+    def test_solution2(self, mock_ReadFile):
+        result = Solution2()
 
-    #     expected_result = 0
+        expected_result = 9
 
-    #     self.assertEqual(result, expected_result)
+        self.assertEqual(result, expected_result)
